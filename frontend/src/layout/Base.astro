@@ -1,0 +1,21 @@
+---
+import NavBar from "../components/Navbar.astro";
+const { title, navTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+      <link rel="stylesheet" href="../styles/global.css">
+    <script
+      src="https://kit.fontawesome.com/0b92670209.js"
+      crossorigin="anonymous"></script>
+    <title>{title}</title>
+  </head>
+  <body class="font-poppins bg-neutral-950 text-white">
+    <NavBar title={navTitle} />
+    <slot />
+  </body>
+</html>

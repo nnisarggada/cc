@@ -1,0 +1,39 @@
+---
+import SideBar from "./SideBar.astro";
+const { title } = Astro.props;
+---
+
+<nav
+  class="w-full h-20 bg-black font-black flex items-center justify-between px-6 py-4"
+>
+  <h1>{title}</h1>
+  <h2 id="menu-icon" class="cursor-pointer p-2">
+    <i class="fa-solid fa-bars"></i>
+  </h2>
+  <h2 id="close-menu-icon" class="cursor-pointer p-2 hidden">
+    <i class="fa-solid fa-xmark"></i>
+  </h2>
+</nav>
+<SideBar />
+
+<script>
+  const menuIcon = document.getElementById("menu-icon");
+  const closeMenuIcon = document.getElementById("close-menu-icon");
+
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+
+  menuIcon.addEventListener("click", () => {
+    sidebar.classList.remove("-left-full");
+    sidebar.classList.add("left-0");
+    menuIcon.classList.add("hidden");
+    closeMenuIcon.classList.remove("hidden");
+  });
+
+  closeMenuIcon.addEventListener("click", () => {
+    sidebar.classList.remove("left-0");
+    sidebar.classList.add("-left-full");
+    closeMenuIcon.classList.add("hidden");
+    menuIcon.classList.remove("hidden");
+  });
+</script>

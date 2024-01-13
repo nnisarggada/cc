@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+.h-screen {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.h-hero {
+  height: 100vh;
+  height: 100svh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
